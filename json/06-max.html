@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>上传大附件进度条设置</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			//1 收集表单信息
+			var fm = document.getElementsByTagName('form')[0];
+			fm.onsubmit = function(evt){
+				var fd = new FormData(this);
+				//2 收集服务器信息
+				var xhr = new XMLHttpRequest();
+				//console.log(xhr);
+				//通过xhr.upload.onprogress事件感知附件上传状况，每间隔100ms监听一次
+				xhr.upload.onprogress = function(evt){
+					console.log(evt);
+					var loaded = evt.loaded;
+					var total = evt.total;
+					var per = Math.floor((loaded)/total*100)+"%";
+					document.getElementById('son').style.width = per;
+					document.getElementById('son').innerHTML = per;
+				}
+				xhr.onreadystatechange = function(){
+					if(xhr.readyState == 4){
+						alert(xhr.responseText);
+					}
+				}
+				xhr.open('post','./06.php');
+
+				xhr.send(fd);
+				evt.preventDefault();
+			}
+		}
+	</script>
+	<style type="text/css">
+	#pat{width:400px; height:35px;border:3px solid blue;}
+	#son{width:0%; height:100%;background-color: grey;}
+</style>
+</head>
+<body>
+  <h2>上传大附件进度条设置</h2>
+  <form action="" method="post">
+  	<p>用户名：<input type="text" id="username" name="username"/></p> <!--没有name 服务器接收不到信息 -->
+  	<p>密码：<input type="password" id="passwd" name="passwd"/></p>
+  	<p>邮箱：<input type="text" id="useremail" name="email"/></p>
+  	<div id="pat"><div id="son"></div></div>
+  	<p>媒体文件：<input type="file" id="userpic" name="photo"></p>
+  	<p><input type="submit" value="注册" /></p>
+  </form>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+<!-- 	<style type="text/css">
+	      audio{
+	      	display:none;
+	      }
+</style> -->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div align="right">
+		<audio autoplay="autoplay" controls="content" loop="loop" src="../../../../music/Goldmund-Dane Street.mp3">版本不支持
+	</audio>
+</div>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">* We are get to know each other in 2016</span><br />
+				<span class="space"/><span class="comments">* so I write some code to celebrate our meeting in chinese valentine's day.</span><br />
+				<span class="space"/><span class="comments">*/</span><br />
+				Boy i = <span class="keyword">new</span> Boy(<span class="string">"Dong"</span>);<br />
+				Girl u = <span class="keyword">new</span> Girl(<span class="string">"Ding"</span>);<br />
+				<span class="comments">// Oct 8, 2016, I told you I love you. </span><br />
+				i.meet(u);<br />
+				<span class="comments">// Luckily, you accepted and became my girlfriend eversince.</span><br />
+				u.accepted();<br />
+				<span class="comments">// Since then, I miss u every day.</span><br />
+				i.miss(u);<br />
+				<span class="comments">// And take care of u and our love.</span><br />
+				i.takeCareOf(u);<br />
+				<span class="comments">// You say that  you enjoyed being with me.</span><br />
+				<span class="comments">// So I am happy and willing to be gentle with you.</span><br />
+				<span class="keyword">boolean</span> isEnjoyed = <span class="keyword">true</span>;<br />
+				<span class="keyword">while</span> (isEnjoyed) {<br />
+				<span class="placeholder"/>i.fallFor(u);<br />
+				<span class="placeholder"/><span class="comments">// I think We can understand each other</span><br />
+				<span class="placeholder"/><span class="comments">// and you should think  so.</span><br />
+				<span class="placeholder"/>isEnjoyed = u.thinkOs();<br />
+				}<br />
+				<span class="comments">// Hopefully, Two years after graduation, I can fulfill my promise to you.</span><br />
+				i.love(u);<br />
+				i.liveHappilyWith(u);<br />
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						Ding, I have fallen in love with you for
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						Love u forever and ever.<br/>
+						<div class="signature">- Dong</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="copyright">
+			Inspired by <a href="https://github.com/hackerzhou/Love">hackerZhou</a> project.<br />
+			Copyright © 2018 <a href='http://forknowit.cn'>造轮小狐</a>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2016, 9, 7);
+		together.setHours(0);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+
+         <div class="content ">
+            <section class="jumbotron geopattern" data-pattern-id="dangrous">
+    <div class="container">
+        <div id="jumbotron-meta-info">        
+            <h1 id="show"></h1>
+            <span id="date"></span>
+        </div>
+    </div>
+</section>
+<script>
+    $(document).ready(function(){
+
+        $('.geopattern').each(function(){
+            $(this).geopattern($(this).data('pattern-id'));
+        });
+
+    });
+</script>

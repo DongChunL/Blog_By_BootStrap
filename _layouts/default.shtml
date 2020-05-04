@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+	<!-- #include file = "../_include/head.html" -->
+     
+ <body>
+   <!-- #include file = "../_include/header.html" -->
+  <!--
+    <div class="content">
+   { content }
+   </div>
+   -->
+ </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<script type="text/javascript">
+	function f1(){
+    //实例化ajax对象
+    var xhr = new XMLHttpRequest();
+
+    //创建http请求并设置请求地址
+    xhr.open('get','./02.php');
+    //给请求地址设置随机数，避免浏览器对其缓存
+    //xhr.open('get','./02.php?'+Math.random());
+
+    //发送请求
+   // xhr.send(post请求的表单数据/get请求设置为null);
+   xhr.send(null);
+    }
+</script>
+</html>
+<body>
+<h1>ajax发起对服务器的请求</h1>
+<input type="button" value="触发" onclick="f1()">
+</body>

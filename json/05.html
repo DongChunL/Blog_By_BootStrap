@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>无刷新方式实现form表单提交</title>
+	<script type="text/javascript">
+		window.onload = function(){
+		var fm = document.getElementsByTagName('form')[0];
+		fm.onsubmit = function(evt){   //evt是随意的一个变量
+
+			//传统方式收集表单域信息，需要写许多重复的代码（document.getElementById)和拼装长串的请求信息，不利于开发和维护
+			var name=document.getElementById("username").value;
+			var passwd=document.getElementById("passwd").value;
+			var email=document.getElementById("useremail").value;
+
+			var info="name="+name+"&passwd="+passwd+"&email="+email;
+			//利用ajax无刷新方式提交表单信息到服务器
+			 var xhr = new XMLHttpRequest();
+			 xhr.onreadystatechange = function(){
+			 	if(xhr.readyState==4){
+			 		alert(xhr.responseText);
+			 	}
+			 }
+			 xhr.open('post','./05.php');
+			 xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+			 xhr.send(info);
+			 evt.preventDefault();  //通过事件对象阻止浏览器默认动作
+			 //return false;  阻止浏览器form表单的提交动作
+		}
+	}
+	</script>
+</head>
+<body>
+  <h2>无刷新方式实现form表单提交</h2>
+  <form action="./05.php" method="post">
+  	<p>用户名：<input type="text" id="username"/></p>
+  	<p>密码：<input type="password" id="passwd" /></p>
+  	<p>邮箱：<input type="text" id="useremail" /></p>
+  	<p><input type="submit" value="注册" /></p>
+  </form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		/**
+		 * 成员属性：
+		 * responseText 以字符串形式接收从服务器端返回的信息
+		 * readyState ajax对象的状态
+		 *    0：刚创建对象
+		 *    1：已经调用open方法
+		 *    2：已经调用send方法
+		 *    3：开始返回数据，但是不完整
+		 *    4：数据返回完整，请求成功
+		 * onreadystatechange 是一个事件，可以随时感知ajax对象状态readyState的变化，为了更好的感知比较多的状态变化，最好在创建对象的后边就进行设置
+		 * 
+		 * 
+		 */
+		function f1(){
+			//①创建ajax对象
+			var xhr = new XMLHttpRequest();    //readyState==0
+			//④设置事件，感知状态变化,最多感知四种变化
+			xhr.onreadystatechange = function(){
+				//cosole.log(xhr.readyState);
+			   if(xhr.readyState==4){
+			      document.getElementById("result").innerHTML = xhr.responseText;
+		       }
+			}
+			//②创建http请求
+			xhr.open('get','./03.php');        //readyState==1
+			//③发送请求
+			xhr.send(null);                    //readyState==2
+
+		}
+	</script>
+	</head>
+	<body>
+		<h2>ajax接收服务器返回的信息<h2>
+			<input type="button" value="触发" onclick="f1()">
+			<div id="result"></div>
+	</body>

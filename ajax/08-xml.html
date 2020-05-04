@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+          function fun1(){
+          	var xhr = new XMLHttpRequest();
+          	xhr.onreadystatechange = function(){
+          		if(xhr.readyState==4){
+          			//alert(xhr.responseText);
+          			//alert(xhr.responseXML);//[object XMLDocument]
+          			xmldom = xhr.responseXML;
+          			 // console.log(xmldom.firstChild);  //<students>
+          			 // 主流浏览器会把空白回车算作具体节点
+          			 // console.log(xmldom.firstChild.childNodes); //空白结点和student节点一共7个
+          			 
+          			 var std = xmldom.getElementsByTagName("student"); 
+          			 //console.log(std); //HTMLCollection(3) [ student, student, student ]
+          			 var s=" ";
+          			 for(var i = 0 ; i<std.length ; i++){
+          			 	//文本节点.nodeValue：通过文本节点获得对应的文本信息
+          			 	var name = std[i].getElementsByTagName('name')[0].firstChild.nodeValue;
+          			 	var age = std[i].getElementsByTagName('age')[0].innerHTML;//一些浏览器不支持。可用上一种方法
+          			 	s +="姓名："+name+"--年龄："+age+"<br />";
+          			 }
+          			 document.getElementById('result').innerHTML = s;
+          		}
+          	}
+          	xhr.open('get','./08.xml');
+          	xhr.send(null);
+          }
+	</script>
+</head>
+<body>
+     <h2>ajax + javascript 实现xml的接收和处理</h2>
+     <input type="button" value="触发" onclick="fun1()">
+     <div id="result"></div>
+</body>
+</html>

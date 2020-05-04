@@ -1,0 +1,34 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<title>js 生成随机背景图</title>  
+<script src="../css/jquery.min.js"></script>
+<script src="../css/geopattern.min.js"></script>
+</head>  
+<body>
+            <section class="jumbotron geopattern" data-pattern-id="About Me">
+    <div class="container">
+        <div id="jumbotron-meta-info">        
+            <h1>About Me</h1>
+            <span class="meta-info">
+                
+                    <span class="mega-octicon octicon-person"></span>&nbsp;&nbsp; I am a programmer
+                
+                
+            </span>
+        </div>
+    </div>
+</section>
+<script>
+$(function(){
+    var option = {
+        //color:'#060',     // 前景色
+        //baseColor:'#006', // 背景色
+        //generator:'plusSigns', // 样式
+    };
+    var pattern = GeoPattern.generate('GitHub' + Math.random(), option);
+    $(".jumbotron").css('background-image', pattern.toDataUrl());
+});
+</script>
+</body>  
+</html>  

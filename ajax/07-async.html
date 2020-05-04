@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>异步请求</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+      var xhr = new XMLHttpRequest();q
+      xhr.onreadystatechange = function(){
+      	if(xhr.readyState == 4){
+      		alert(xhr.responseText);
+      	}
+      }
+      xhr.open('get','./07.php',true);   //true异步，false异步
+      xhr.send(null);
+
+	</script>
+</head>
+<body>
+<h2>异步:同一时间点允许运行多个进程</h2>
+</body>
+</html>

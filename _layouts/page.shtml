@@ -1,0 +1,6 @@
+<!-- #include file = "../_include/jumbotron.html" -->
+<article class="post container">
+
+   <!-- {{ content }}-->
+
+</article>

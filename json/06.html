@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>无刷新方式实现附件上传</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			//1 收集表单信息
+			var fm = document.getElementsByTagName('form')[0];
+			fm.onsubmit = function(evt){
+				var fd = new FormData(this);
+				//2 收集服务器信息
+				var xhr = new XMLHttpRequest();
+				xhr.onreadystatechange = function(){
+					if(xhr.readyState == 4){
+						alert(xhr.responseText);
+					}
+				}
+				xhr.open('post','./06.php');
+
+				xhr.send(fd);
+				evt.preventDefault();
+			}
+		}
+	</script>
+</head>
+<body>
+  <h2>无刷新方式实现附件上传</h2>
+  <form action="./06.php" method="post">
+  	<p>用户名：<input type="text" id="username" name="username"/></p> <!--没有name 服务器接收不到信息 -->
+  	<p>密码：<input type="password" id="passwd" name="passwd"/></p>
+  	<p>邮箱：<input type="text" id="useremail" name="email"/></p>
+  	<p>头像：<input type="file" id="userpic" name="photo"></p>
+  	<p><input type="submit" value="注册" /></p>
+  </form>
+</body>
+</html>

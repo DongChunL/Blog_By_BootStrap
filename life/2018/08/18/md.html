@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>md</title></head>
+<body>
+<h3>&lt;meta&gt;简介</h3>
+<p>&lt;meta&gt;标签提供有关页面的元信息（meta-information），比如针对搜索引擎和更新频度的描述和关键词。&lt;meta&gt;标签位于文档的头部，不包含任何内容。&lt;meta&gt;标签的属性定义了与文档相关联的<strong>名称和值对</strong>。</p>
+<p>&nbsp;</p>
+<h3>相关属性</h3>
+<h4>charset</h4>
+<pre><code class='language-html' lang='html'>    &lt;meta charset=&quot;utf-8&quot;&gt;
+</code></pre>
+<blockquote><p>释义：charset属性设置编码格式，设置成utf-8避免出现中文乱码</p>
+</blockquote>
+<p>&nbsp;</p>
+<h4>content</h4>
+<pre><code class='language-html' lang='html'>    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+</code></pre>
+<blockquote><p>释义：&lt;meta&gt;标签必需的一个属性，依赖于http-equive和name<strong>名称和值对</strong>，存放其内容，值为text</p>
+</blockquote>
+<p>&nbsp;</p>
+<h3>http-equiv</h3>
+<pre><code class='language-html' lang='html'>    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+</code></pre>
+<blockquote><p>释义：http-equiv 属性为<strong>名称/值对</strong>提供了名称。并指示服务器在发送实际的文档之前要先传送给浏览器的 MIME 文档头部包含<strong>名称/值对</strong>。 </p>
+</blockquote>
+<figure><table>
+<thead>
+<tr><th style='text-align:left;' >http-euqiv=&quot;内容&quot;</th><th>含义</th><th>示例   content=&quot;值&quot;</th></tr></thead>
+<tbody><tr><td style='text-align:left;' >content-type</td><td>内容类型</td><td>text/html，text/css...</td></tr><tr><td style='text-align:left;' >default-style</td><td>预定义的样式</td><td>同一文档下，&lt;link&gt;或&lt;style&gt;中的title值</td></tr><tr><td style='text-align:left;' >reflash</td><td>定时刷新或重定向，用户不可控制，慎用</td><td>正整值</td></tr><tr><td style='text-align:left;' >X-UA-Compatible</td><td>IE8特有，告诉浏览器用何种IE版本渲染网页</td><td>IE=edge采用IE最新版本渲染网页</td></tr></tbody>
+</table></figure>
+<p>&nbsp;</p>
+<h4>name</h4>
+<pre><code class='language-html' lang='html'>    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;meta name=&quot;keywords&quot; content=&quot;关键字，可从decription中选取&quot;&gt;
+	&lt;meta name=&quot;description&quot; content=&quot;描述网页的关键信息&quot;&gt;
+</code></pre>
+<blockquote><p>释义：name属性提供了<strong>名称/值对</strong>的名称，通常由网页制作者自己命名富有意义的名称，便于阅读和理解。</p>
+<p>name="keywords"网站关键字，设置了关键字以后，有利于搜索引擎搜索</p>
+<p>name="description"网页的描述，是给搜索引擎看的，搜索引擎根据这个描述进行收录排名，一般是网页内的关键字。"--></p>
+<p>name="viewport",viewport的宽度等于设备的宽度，同时不允许用户手动缩放。也许允不允许用户缩放不同的网站有不同的要求，但让viewport的宽度等于设备的宽度，这个应该是大家都想要的效果，如果你不这样的设定的话，那就会使用那个比屏幕宽的默认viewport，也就是说会出现横向滚动条。</p>
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

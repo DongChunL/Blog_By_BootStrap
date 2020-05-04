@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>json - javascript</title>
+	<script type="text/javascript">
+           //通过ajax请求json信息回来
+        function fun1(){
+          var weather = document.getElementById("weather");
+          var xhr = new XMLHttpRequest();
+          xhr.onreadystatechange= function(){
+         	if(xhr.readyState ==4){
+         		//alert(typeof xhr.responseText); string json信息是以字符串string形式回来的，需要转为对象object能调用city、temp、wind属性
+         		eval("var jn_info="+xhr.responseText);
+         		weather.innerHTML = jn_info.city +"<br />";
+         		weather.innerHTML = weather.innerHTML + jn_info.temp +"<br />";
+         		weather.innerHTML = weather.innerHTML + jn_info.wind +"<br />";
+         	}
+         }
+         xhr.open('get','./04.php');
+         xhr.send(null);
+         }
+         //例dog object对象和dog string字符串
+         
+         //var dog = {name:'wangcai',weight:50};
+         //alert(typeof dog);
+         //var dog = "{name:'wangcai',weight:50}";
+
+         //字符串当做表达式运行eval()
+         //"var wolf=" +dog;//"var wolf={name:'wangcai',weight:50}"
+         //eval("var wolf=" +dog);
+         //alert(wolf);
+	</script>
+</head>
+<body>
+     <h2>静态网站页面通过javascript实现json接收和处理</h2>
+     <input type="button" id="div1" onclick="fun1()" value="触发" />
+     <div id="weather"></div>
+</body>
+</html>

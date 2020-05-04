@@ -1,0 +1,82 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>造轮小狐 - 所有文章</title>
+    <meta name="keywords" content="造轮小狐、个人博客、前端、后端、故事、html、css、javascript、php、c++、java、python、bootstrap、jquery">
+    <meta name="description" content="本站是造轮小狐的技术博客。内容主要分享记录前端html、css、javascript、php和后端c++、java、python，bootstrap、jquery框架、个人生活、故事等文摘">
+    <link rel="canonical" href="http：//www.forknowit.cn/">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.bootcss.com/hover.css/2.0.1/css/hover-min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/octicons/4.4.0/font/octicons.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/about.css">
+    <link rel="stylesheet" href="assets/css/common.css">
+	<link rel="stylesheet" href="css/flag-icon.min.css">
+
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+  <div id="header"></div>
+  
+        <div class="content">
+            <section class="jumbotron geopattern" data-pattern-id="">   <!--变色-->
+    <div class="container">
+        <div id="jumbotron-meta-info">        
+            <h1>所有文章</h1>
+            <span class="meta-info">
+                
+                    <span class="mega-octicon octicon-book"></span>&nbsp;&nbsp;记录点点滴滴... &nbsp;&nbsp;              
+                
+            </span>
+        </div>
+    </div>
+</section>
+<script>
+    $(document).ready(function(){
+
+        $('.geopattern').each(function(){
+            $(this).geopattern($(this).data('pattern-id'));
+        });
+
+    });
+</script>
+
+    <article class="post container" itemtype="http://schema.org/BlogPosting">
+       <ul class="archives-list">
+        <h3>2018</h3>
+
+       <li><span>08-19</span> <a href="life/2018/08/19/tool_typora.html">神兵利器之Typora</a></li>
+
+        <li><span>08-19</span> <a href="life/2018/08/19/html-doctype.html">HTML的&lt;!DOCTYPE&gt;标签</a></li>
+
+        <li><span>08-18</span> <a href="life/2018/08/18/html-meta.html">HTML的&lt;meta&gt;标签</a></li>
+
+        <li><span>08-17</span> <a href="life/2018/08/17/index.html">Our love story</a></li>
+
+        <li><span>08-16</span> <a href="/about.html">关于我</a></li>
+
+        <li><span>08-14</span> <a href="/life/2018/08/14/about-myblog.html">关于此博客</a></li>
+
+
+
+       </ul>
+    </article>
+
+
+
+
+
+  <div id="footer"></div>
+  <script>
+      $("#header").load("_include/header.html");
+	  $("#footer").load("_include/footer.html");
+  </script>
+    <!-- Third-Party JS -->
+    <script src="https://cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+	<!-- My JS -->
+    <script type="text/javascript" src="assets/js/script.js"></script>
+</body>
+</html>

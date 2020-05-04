@@ -1,0 +1,118 @@
+<html>
+<head>
+    <!--
+	    <meta> 元素可提供有关页面的元信息（meta-information），比如针对搜索引擎和更新频度的描述和关键词。
+        <meta> 标签位于文档的头部，不包含任何内容。<meta> 标签的属性定义了与文档相关联的名称/值对。
+		-->
+    <meta charset="utf-8">
+	<!--<meta http-equiv="X-UA-Compatible" content="IE=edge">****告诉IE浏览器，IE8/9及以后的版本都会以最高版本IE来渲染页面。-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--****该meta标签的作用是让当前viewport的宽度等于设备的宽度，同时不允许用户手动缩放。也许允不允许用户缩放不同的网站有不同的要求，但让viewport的宽度等于设备的宽度，这个应该是大家都想要的效果，如果你不这样的设定的话，那就会使用那个比屏幕宽的默认viewport，也就是说会出现横向滚动条。-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- rel="shortcut icon" 地址栏左侧图标 利于搜索引擎优化
+	   大小一般为size="16*16"
+	   后缀名为.icon的图标（格式PNG\GIF\JPEG）
+	   此处无效
+	   -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+
+    <title>造轮小狐</title>
+	<!--name="keywords"网站关键字，设置了关键字以后，有利于搜索引擎搜索 -->
+    <meta name="keywords" content="">
+    <!--meta name="description" content="这里是网页的描述，是给搜索引擎看的，搜索引擎根据这个描述进行收录排名，一般是网页内的关键字。"-->
+	<meta name="description"
+          content="">
+	<!--canonical(权威)标签是Google、雅虎、微软等搜索引擎一起推出的一个标签，它的主要作用是用来解决由于网址形式不同内容相同而造成的内容重复问题。这个标签对搜索引擎作用非常大，以前网站上的url不同会被搜索引擎认为是重复内容，利用该标签可以指定权威的某个链接，避免重复内容收录。
+	   此处未设置http://forknowit.cn  
+	-->
+    <link rel="canonical" href="javascript:void{}">
+	<!--替换文件，不太需要-->
+    <link rel="alternate" type="application/rss+xml" title="造轮小狐" href="http://www.forknowit.com/feed.xml">
+
+    <!-- Third-Party CSS 
+	    ****1)  /css/bootstrap.min.css 
+		****2)  /css/hover-min.css      不能私有，超链接渐变消失
+		****3)  /css/user-content.min.css   markdown
+		****4)  /css/octicons.min.css   不能私有，私有调用不了octicons图标
+		****5)  /assets/css/syntax.css
+		****6)  /css/gitalk.css
+	-->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/hover.css/2.0.1/css/hover-min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../../css/user-content.min.css">
+    <link href="https://cdn.bootcss.com/octicons/4.4.0/font/octicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../../assets/css/syntax.css">
+    <link href="css/gitalk.css" rel="stylesheet">
+    <!-- My CSS 
+	    ****1)  /assets/css/common.css 
+		****下划线不见
+		****布局header
+	-->
+    <link rel="stylesheet" href="../../../../assets/css/common.css">
+
+    <!-- CSS set in page 
+	    ****1)  /assets/css/index.css
+		        首页蓝幕
+		****2)  /assets/css/sidebar-popular-repo.css
+		       小框背景图片填充
+	-->
+    
+    <link rel="stylesheet" href="../../../../assets/css/sidebar-popular-repo.css">
+    
+
+    <!-- CSS set in layout 
+	    ****1) /css/jquery.min.js   不自引
+		       小框背景图片来源
+		****2)  /css/bootstrap.min.js
+		       小框背景图片来源
+	-->
+
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+          
+
+		  <div id="header"></div>
+         <div class="content ">
+            <section class="jumbotron geopattern" data-pattern-id="about blogger">
+    <div class="container">
+        <div id="jumbotron-meta-info">        
+            <h1>关于此博客</h1>
+            <span class="meta-info">
+                
+                    <span class="mega-octicon octicon-calendar"></span>&nbsp;&nbsp; 2018/08/14
+                
+                
+            </span>
+        </div>
+    </div>
+</section>
+<script>
+    $(document).ready(function(){
+
+        $('.geopattern').each(function(){
+            $(this).geopattern($(this).data('pattern-id'));
+        });
+
+    });
+</script>
+
+    <header id="header"></header>
+    <article class="post container" itemtype="http://schema.org/BlogPosting">
+       <div id="content" class="col-md-12 markdown-body"></div>
+    </article>
+    <footer id="footer"></footer>
+
+	<script>
+           $("#header").load("/_lincude/header.html");
+           $("#content").load("/life/2018/07/30/content.html");
+           $("#footer").load("/_include/footer.html");
+	</script>
+
+    <script src="https://cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+	<!-- My JS -->
+    <script type="text/javascript" src="../../../../assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<meta charset="utf-8">
+<title>js 生成随机背景图</title>  
+<script src="../css/jquery.min.js"></script>
+<script src="../css/geopattern.min.js"></script>
+<style>
+html, body{
+margin:0; padding:0; width:100%; height:100%;
+}
+</style>
+</head>  
+<body>
+<script>
+$(function(){
+    var option = {
+        //color:'#060',     // 前景色
+        //baseColor:'#006', // 背景色
+        //generator:'plusSigns', // 样式
+    };
+    var pattern = GeoPattern.generate('GitHub' + Math.random(), option);
+    $('body').css('background-image', pattern.toDataUrl());
+});
+</script>
+</body>  
+</html>  

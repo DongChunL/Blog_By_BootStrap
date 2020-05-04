@@ -1,0 +1,82 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Archives</title>
+    <meta name="keywords" content="">
+	<meta name="description" content="">
+    <link rel="canonical" href="javascript:void{}">
+
+    <!-- Third-Party CSS 
+	    ****1)  /css/bootstrap.min.css 
+		****2)  /css/hover-min.css      不能私有，超链接渐变消失
+		****3)  /css/user-content.min.css
+		****4)  /css/octicons.min.css   不能私有，私有调用不了octicons图标
+		****5)  /assets/css/syntax.css
+		****6)  /css/gitalk.css
+	-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.bootcss.com/hover.css/2.0.1/css/hover-min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/octicons/4.4.0/font/octicons.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/about.css">
+    <link rel="stylesheet" href="assets/css/common.css">
+	<link rel="stylesheet" href="css/flag-icon.min.css">
+
+    
+
+    <!-- CSS set in layout 
+	    ****1) /css/jquery.min.js
+		       小框背景图片来源
+		****2)  /css/bootstrap.min.js
+		       小框背景图片来源
+	-->
+
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+  <div id="header"></div>
+  
+        <div class="content">
+            <section class="jumbotron geopattern" data-pattern-id="">   <!--变色-->
+    <div class="container">
+        <div id="jumbotron-meta-info">        
+            <h1>副 标 题</h1>
+            <span class="meta-info">
+                
+                    <span class="mega-octicon octicon-calendar"></span>&nbsp;&nbsp;描述 &nbsp;&nbsp;              
+                
+            </span>
+        </div>
+    </div>
+</section>
+<script>
+    $(document).ready(function(){
+
+        $('.geopattern').each(function(){
+            $(this).geopattern($(this).data('pattern-id'));
+        });
+
+    });
+</script>
+
+
+
+
+
+
+
+  <div id="footer"></div>
+  <script>
+      $("#header").load("_include/header.html");
+	  $("#footer").load("_include/footer.html");
+  </script>
+    <!-- Third-Party JS -->
+    <script src="https://cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+	<!-- My JS -->
+    <script type="text/javascript" src="assets/js/script.js"></script>
+</body>
+</html>
